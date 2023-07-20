@@ -35,6 +35,8 @@ public class RegistrationFormTests {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
 //        Заполнение полей
 
@@ -63,16 +65,16 @@ public class RegistrationFormTests {
 //        Проверка формы регистрации
 
         $("[id=example-modal-sizes-title-lg]").shouldHave(text("Thanks for submitting the form"));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[1]/td[2]").shouldHave(text(firstName + " " + lastName));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[2]/td[2]").shouldHave(text(email));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[3]/td[2]").shouldHave(text(gender));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[4]/td[2]").shouldHave(text(number));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[5]/td[2]").shouldHave(text(day + " " + month + "," + year));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[6]/td[2]").shouldHave(text(subjects));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[7]/td[2]").shouldHave(text(hobbies));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[8]/td[2]").shouldHave(text(foto));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[9]/td[2]").shouldHave(text(address));
-        $x("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[10]/td[2]").shouldHave(text(selectState + " " + selectCity));
+        $x("//tbody/tr[1]/td[2]").shouldHave(text(firstName + " " + lastName));
+        $x("//tbody/tr[2]/td[2]").shouldHave(text(email));
+        $x("//tbody/tr[3]/td[2]").shouldHave(text(gender));
+        $x("//tbody/tr[4]/td[2]").shouldHave(text(number));
+        $x("//tbody/tr[5]/td[2]").shouldHave(text(day + " " + month + "," + year));
+        $x("//tbody/tr[6]/td[2]").shouldHave(text(subjects));
+        $x("//tbody/tr[7]/td[2]").shouldHave(text(hobbies));
+        $x("//tbody/tr[8]/td[2]").shouldHave(text(foto));
+        $x("//tbody/tr[9]/td[2]").shouldHave(text(address));
+        $x("//tbody/tr[10]/td[2]").shouldHave(text(selectState + " " + selectCity));
 
         $("[id=closeLargeModal").click();
     }
