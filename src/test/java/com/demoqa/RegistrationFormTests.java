@@ -40,31 +40,31 @@ public class RegistrationFormTests {
 
 //        Заполнение полей
 
-        $("[id=firstName]").setValue(firstName);
-        $("[id=lastName]").setValue(lastName);
-        $("[id=userEmail]").setValue(email);
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(email);
         $(byText(gender)).click();
-        $("[id=userNumber]").setValue(number);
-        $("[id=dateOfBirthInput").click();
+        $("#userNumber").setValue(number);
+        $("#dateOfBirthInput").click();
         $(".react-datepicker__month-dropdown-container--select").click();
         $(byText(month)).click();
         $(".react-datepicker__year-dropdown-container--select").click();
         $(byText(year)).click();
         $(byText(day)).click();
-        $("[id=subjectsInput]").setValue("a");
+        $("#subjectsInput").setValue("a");
         $(byText(subjects)).click();
         $(byText(hobbies)).click();
         $("input#uploadPicture").uploadFromClasspath(foto);
-        $("[id=currentAddress]").setValue(address);
+        $("#currentAddress").setValue(address);
         $(".css-1wa3eu0-placeholder").click();
         $(byText(selectState)).click();
         $(".css-1wa3eu0-placeholder").click();
         $(byText(selectCity)).click();
-        $("[id=submit]").click();
+        $("#submit").click();
 
 //        Проверка формы регистрации
 
-        $("[id=example-modal-sizes-title-lg]").shouldHave(text("Thanks for submitting the form"));
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $x("//tbody/tr[1]/td[2]").shouldHave(text(firstName + " " + lastName));
         $x("//tbody/tr[2]/td[2]").shouldHave(text(email));
         $x("//tbody/tr[3]/td[2]").shouldHave(text(gender));
@@ -76,6 +76,6 @@ public class RegistrationFormTests {
         $x("//tbody/tr[9]/td[2]").shouldHave(text(address));
         $x("//tbody/tr[10]/td[2]").shouldHave(text(selectState + " " + selectCity));
 
-        $("[id=closeLargeModal").click();
+        $("#closeLargeModal").click();
     }
 }
