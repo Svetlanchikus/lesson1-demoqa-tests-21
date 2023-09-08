@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.test_v1;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,7 +19,7 @@ public class RegistrationFormTests {
     public String day = "15";
     public String subjects = "Arts";
     public String hobbies = "Music";
-    public String foto = "foto.png";
+    public String foto = "photo_1.png";
     public String address = "The city of Moscow";
     public String selectState = "NCR";
     public String selectCity = "Delhi";
